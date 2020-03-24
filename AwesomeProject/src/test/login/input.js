@@ -11,7 +11,7 @@ export default class Input extends Component {
 
     render() {
         return (
-            <   View>
+            <View>
                 <Image
                 style={stylesInput.inlineImg} 
                 source={this.props.source}></Image>
@@ -23,7 +23,7 @@ export default class Input extends Component {
                     placeholderTextColor={Colors.white}
                     underlineColorAndroid="transparent"
                 ></TextInput>
-            </  View>
+            </View>
         );
     }
 
@@ -46,7 +46,8 @@ const stylesInput = StyleSheet.create({
       paddingLeft: 45,
       borderRadius: 20,
       color: '#ffffff',
-      marginBottom: 15
+      marginBottom: 15,
+
     },
     inlineImg: {
       position: 'absolute',
