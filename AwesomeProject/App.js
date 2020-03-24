@@ -4,6 +4,9 @@ import {Colors} from 'react-native/Libraries/NewAppScreen';
 import MyComponent from './src/test/MyComponent';
 import Logo from './src/test/login/logo';
 
+import Input from './src/test/login/input';
+import imgPassword from './src/test/images/pass.png';
+
 const App: () => React$Node = () => {
   return (
     <View style={styles.body}>
@@ -11,6 +14,13 @@ const App: () => React$Node = () => {
       <MyComponent style={styles.box} text = "Hola mundo desde React Native"></MyComponent>
       <MyComponent style={styles.box} text = "Jomar Camacho"></MyComponent>
       <Logo style={styles.box}></Logo>
+
+      <Input
+        source={imgPassword}
+        placeholder="password"
+        secureTextEntry={false}
+        autoCorrect={false}
+      ></Input>
     </View>
     </View>
   );
