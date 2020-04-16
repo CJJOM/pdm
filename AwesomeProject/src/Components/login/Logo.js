@@ -1,7 +1,7 @@
 import React, { Component } from 'react';
 import {StyleSheet, View, Text, Image} from 'react-native';
 
-import imgLogo from '../../images/logo.png';
+import Images from '../../Config/Images';
 
 export default class Logo extends Component {
     constructor(props) {
@@ -12,7 +12,7 @@ export default class Logo extends Component {
         return(
             
             <View style={styles.container}>
-                <Image source={imgLogo} style={styles.image}></Image>
+                <Image source={Images.LOGO} style={styles.image}></Image>
                 <Text style={styles.text}>COCHABAMBA</Text>
             </View>
         );

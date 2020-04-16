@@ -5,11 +5,9 @@ import ButtonLogin from '../../Components/login/Button';
 import TextInputLogin from '../../Components/TextInput';
 import LogoLogin from '../../Components/login/Logo';
 
-import imgUsername from '../../images/username.png';
-import imgPassword from '../../images/pass.png';
-
 import Constants from '../../Config/Constants';
 import Colors from '../../Config/Colors';
+import Images from '../../Config/Images';
 
 
 export default class LoginScreen extends Component {
@@ -19,7 +17,8 @@ export default class LoginScreen extends Component {
         this.state = {
             username: '',
             password: ''
-        }
+        };
+
         this._onPress = this._onPress.bind(this);
         this._onChangeTextUsername = this._onChangeTextUsername.bind(this);
         this._onChangeTextPassword = this._onChangeTextPassword.bind(this);
@@ -50,23 +49,23 @@ export default class LoginScreen extends Component {
             <View style={stylesLoginScreen.form}>
                 <TextInputLogin
                     onChangeText={this._onChangeTextUsername}
-                    source={imgUsername}
-                    placeholder={Constants.USERNAME}
+                    source={Images.USERNAME}
+                    placeholder={Constants.STRING.USERNAME}
                     securetextEntry={false}
                     autoCorrect={false}
                 >
                 </TextInputLogin>
                 <TextInputLogin
                     onChangeText={this._onChangeTextPassword}
-                    source={imgPassword}
-                    placeholder={Constants.PASSWORD}
+                    source={Images.PASSWORD}
+                    placeholder={Constants.STRING.PASSWORD}
                     securetextEntry={true}
                     autoCorrect={false}
                 >
                 </TextInputLogin>
                 <ButtonLogin
                     onPress={this._onPress}
-                    titleButton={Constants.TITLE_BUTTON}
+                    titleButton={Constants.STRING.TITLE_BUTTON}
                 >
                 </ButtonLogin>
             </View>
@@ -81,16 +80,14 @@ const stylesLoginScreen = StyleSheet.create({
       flex: 1,
       backgroundColor: Colors.dark,
       alignItems: 'center',
-      justifyContent: 'space-between',
+      paddingBottom: 50
     },
     logo: {
-      flex: 1,
       width: '100%',
       resizeMode: 'contain',
       alignSelf: 'center',
     },
     form: {
-      flex: 1,
       justifyContent: 'center',
       width: '80%',
     },

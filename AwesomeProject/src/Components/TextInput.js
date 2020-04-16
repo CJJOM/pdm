@@ -43,7 +43,7 @@ TextInputForm.propTypes = {
 
 const stylesTextInput = StyleSheet.create({
     textInput: {
-      backgroundColor: 'rgba(255, 255, 255, 0.4)',
+      backgroundColor: Colors.silver,
       alignItems: 'center',
       height: 40,
       borderColor: '#BEBEBE',
