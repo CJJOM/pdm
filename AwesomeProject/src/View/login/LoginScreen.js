@@ -1,17 +1,20 @@
-import React, {Component} from 'react';
-import {StyleSheet, View, Text } from 'react-native';
+import React, { Component } from 'react';
+import { StyleSheet, View, SafeAreaView, KeyboardAvoidingView } from 'react-native';
 
 import ButtonLogin from '../../Components/login/Button';
 import TextInputLogin from '../../Components/TextInput';
 import LogoLogin from '../../Components/login/Logo';
+import EmailTextField from '../../Components/login/EmailTextField';
+import DismissKeyboard from '../../Components/login/DismissKeyboard';
 
+import Utils from '../../utils/utils';
 import Constants from '../../Config/Constants';
 import Colors from '../../Config/Colors';
 import Images from '../../Config/Images';
 
 
 export default class LoginScreen extends Component {
-    constructor(props){
+    constructor(props) {
         super(props);
 
         this.state = {
@@ -24,72 +27,85 @@ export default class LoginScreen extends Component {
         this._onChangeTextPassword = this._onChangeTextPassword.bind(this);
     }
 
-    _onPress(){
+    _onPress() {
         console.log('Button pressed!!');
         console.log(this.state.username);
         console.log(this.state.password);
     }
 
-    _onChangeTextUsername(username){
+    _onChangeTextUsername(username) {
         this.setState({
-            username: username
+            username: username,
         });
     }
 
-    _onChangeTextPassword(password){
+    _onChangeTextPassword(password) {
         this.setState({
-            password: password
+            password: password,
         });
     }
 
-    render(){
-        return(
-            <View style={stylesLoginScreen.container}>
-                <LogoLogin style={stylesLoginScreen.logo}></LogoLogin>
-            <View style={stylesLoginScreen.form}>
-                <TextInputLogin
-                    onChangeText={this._onChangeTextUsername}
-                    source={Images.USERNAME}
-                    placeholder={Constants.STRING.USERNAME}
-                    securetextEntry={false}
-                    autoCorrect={false}
-                >
-                </TextInputLogin>
-                <TextInputLogin
-                    onChangeText={this._onChangeTextPassword}
-                    source={Images.PASSWORD}
-                    placeholder={Constants.STRING.PASSWORD}
-                    securetextEntry={true}
-                    autoCorrect={false}
-                >
-                </TextInputLogin>
-                <ButtonLogin
-                    onPress={this._onPress}
-                    titleButton={Constants.STRING.TITLE_BUTTON}
-                >
-                </ButtonLogin>
-            </View>
-                
-            </View>
+    _validateEmailAddress(email) {
+        // Utils.isValidEmail(email);
+    }
+
+    _onChangeTextEmail() {
+        //onchange
+    }
+
+    render() {
+        return (
+            <DismissKeyboard>
+                <KeyboardAvoidingView style={stylesLoginScreen.container} behavior="padding" enabled>
+                    <View style={stylesLoginScreen.container} >
+                        <SafeAreaView>
+                            <LogoLogin style={stylesLoginScreen.logo}></LogoLogin>
+                            <View style={stylesLoginScreen.form}>
+                                <EmailTextField
+                                    onChangeText={this._onChangeTextEmail}
+                                    onEndEditing={this._validateEmailAddress}
+                                    placeholder={Constants.STRING.EMAIL}
+                                    securetextEntry={false}
+                                    autoCorrect={false}
+                                >
+                                </EmailTextField>
+                                <TextInputLogin
+                                    onChangeText={this._onChangeTextUsername}
+                                    source={Images.USERNAME}
+                                    placeholder={Constants.STRING.USERNAME}
+                                    securetextEntry={false}
+                                    autoCorrect={false}
+                                >
+                                </TextInputLogin>
+                                <ButtonLogin
+                                    onPress={this._onPress}
+                                    titleButton={Constants.STRING.TITLE_BUTTON}
+                                >
+                                </ButtonLogin>
+                            </View>
+                        </SafeAreaView>
+                    </View>
+                </KeyboardAvoidingView>
+            </DismissKeyboard>
+
         );
     }
 }
 
 const stylesLoginScreen = StyleSheet.create({
     container: {
-      flex: 1,
-      backgroundColor: Colors.dark,
-      alignItems: 'center',
-      paddingBottom: 50
+        flex: 1,
+        backgroundColor: Colors.dark,
+        alignItems: 'center',
+        paddingBottom: 50
     },
     logo: {
-      width: '100%',
-      resizeMode: 'contain',
-      alignSelf: 'center',
+        width: '100%',
+        resizeMode: 'contain',
+        alignSelf: 'center',
     },
     form: {
-      justifyContent: 'center',
-      width: '80%',
+        justifyContent: 'center',
+        width: '80%',
     },
-  });
-  
+});
