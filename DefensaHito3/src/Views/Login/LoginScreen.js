@@ -1,14 +1,14 @@
 import React, { useState } from 'react';
 import { StyleSheet, View, SafeAreaView, KeyboardAvoidingView, Alert } from 'react-native';
 
-import ButtonLogin from '../../Components/login/Button';
-import TextInputLogin from '../../Components/TextInput';
-import LogoLogin from '../../Components/login/Logo';
-import EmailTextField from '../../Components/login/EmailTextField';
-import DismissKeyboard from '../../Components/login/DismissKeyboard';
-import FirebasePlugin from '../../plugins/firebase/Firebase';
+import ButtonLogin from '../../Components/Login/Button';
+import TextInputLogin from '../../Components/Login/TextInput';
+import LogoLogin from '../../Components/Login/Logo';
+import EmailTextField from '../../Components/Login/EmailTextField';
+import DismissKeyboard from '../../Components/Login/DismissKeyboard';
+import FirebasePlugin from '../../Plugins/firebase/Firebase';
 
-import Utils from '../../utils/utils';
+import Utils from '../../Utils/utils';
 import Images from '../../Config/Images';
 import Constants from '../../Config/Constants';
 import Colors from '../../Config/Colors';
@@ -53,7 +53,7 @@ const LoginScreen = ({navigation}) => {
           FirebasePlugin.auth().createUserWithEmailAndPassword(email, password)
             .then((user) => {
               debugger;
-              navigation.navigate('Register');
+              navigation.navigate('Miapp');
               Alert.alert('Usuario Creado');
             })
             .catch((error) => {
@@ -105,11 +105,12 @@ const LoginScreen = ({navigation}) => {
 const stylesLoginScreen = StyleSheet.create({
   container: {
     flex: 1,
-    backgroundColor: Colors.dark,
+    backgroundColor: Colors.blue,
     alignItems: 'center',
   },
   logo: { width: '100%', resizeMode: 'contain', alignSelf: 'center' },
   form: { justifyContent: 'center', width: '80%' },
+
 });
 
 export default LoginScreen;

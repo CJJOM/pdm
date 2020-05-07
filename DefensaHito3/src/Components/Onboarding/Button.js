@@ -31,21 +31,24 @@ export default class button extends Component {
 
 const stylesButton = StyleSheet.create({
     container: {
-        width: 100,
+        width: 140,
         justifyContent: 'center',
         alignItems: 'center',
         alignContent: 'center',
-        backgroundColor: Colors.appPrimary,
+        backgroundColor: 'transparent',
         marginBottom: 12,
         paddingVertical: 12,
-        borderRadius: 5,
+        borderRadius: 50,
         borderWidth: StyleSheet.hairlineWidth,
-        borderColor: 'rgba(255,255,255,0.7)',
+        borderColor: Colors.white,
+        height: 35,
+        borderWidth: 1,
     },
     text: {
         color: Colors.white,
         textAlign: 'center',
         height: 20,
+        fontWeight: 'bold'
     },
 });
 
