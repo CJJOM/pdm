@@ -31,7 +31,7 @@ const LoginScreen = ({navigation}) => {
     return isValidPassword;
   }
 
-  const _onPress = () => {
+  const _onPressLogin = () => {
     //console.log('press button!!!');
     let emailData = _validateEmailAddress();
     let passwordData = _validatePassword();
@@ -43,23 +43,20 @@ const LoginScreen = ({navigation}) => {
     }
   }
 
+  const _onPressRegister = () => {
+    navigation.navigate('Register');
+  }
+
   const LoginApp = (email, password) => {
     try {
       FirebasePlugin.auth().signInWithEmailAndPassword(email, password)
         .then((user) => {
+          navigation.navigate('App');
           Alert.alert('Usuario logeado');
         })
         .catch((error) => {
-          FirebasePlugin.auth().createUserWithEmailAndPassword(email, password)
-            .then((user) => {
-              debugger;
-              navigation.navigate('Register');
-              Alert.alert('Usuario Creado');
-            })
-            .catch((error) => {
-              Alert.alert(error.message);
-            })
-        })
+          Alert.alert('Invalid value', error.message);
+        });
     } catch (error) {
       Alert.alert(error.message);
     }
@@ -91,8 +88,12 @@ const LoginScreen = ({navigation}) => {
                 autoCorrect={false}>
               </TextInputLogin>
               <ButtonLogin
-                onPress={_onPress}
+                onPress={_onPressLogin}
                 titleButton={Constants.STRING.TITLE_BUTTON}>
+              </ButtonLogin>
+              <ButtonLogin
+                onPress={_onPressRegister}
+                titleButton={Constants.STRING.REGISTER_FORM}>
               </ButtonLogin>
             </View>
           </SafeAreaView>
