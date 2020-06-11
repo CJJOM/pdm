@@ -1,9 +1,9 @@
-import React, {useState, useEffect} from 'react';
-import {StyleSheet, View, Alert} from 'react-native';
+import React, { useState, useEffect } from 'react';
+import { StyleSheet, View, Alert } from 'react-native';
 
 import CTextField from '../../Components/CTextField';
 import Button from '../../Components/login/Button';
-import FirebasePlugin, {firestore} from '../../plugins/firebase/Firebase';
+import FirebasePlugin, { firestore } from '../../plugins/firebase/Firebase';
 
 import Constants from '../../Config/Constants';
 import Utils from '../../utils/utils';
@@ -32,21 +32,21 @@ const SettingScreen = () => {
 
   const addGroupEmails = (emailID, userID) => {
     const emailsAddedRef = firestore
-    .collection('groupEmails').doc(userID)
-    .collection('email').doc('EMAILS_ADDED');
-    
+      .collection('groupEmails').doc(userID)
+      .collection('email').doc('EMAILS_ADDED');
+
     emailsAddedRef.set({
-    userID: userID,
+      userID: userID,
     })
-    .then(function () {
-    setIsLoading(false);
-    Alert.alert('USER ID creado:', emailsAddedRef.id);
-    })
-    .catch(function (error) {
-    Alert.alert('Error al crear', error.message);
-    setIsLoading(false);
-    });
-    }
+      .then(function () {
+        setIsLoading(false);
+        Alert.alert('USER ID creado:', emailsAddedRef.id);
+      })
+      .catch(function (error) {
+        Alert.alert('Error al crear', error.message);
+        setIsLoading(false);
+      });
+  }
 
   const addEmailRowToFirebase = () => {
     setIsLoading(true);
