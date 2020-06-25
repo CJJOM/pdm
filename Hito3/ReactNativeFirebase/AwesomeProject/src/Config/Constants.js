@@ -19,11 +19,13 @@ const strings = {
     PASSWORD_ERROR: 'Password invalid!',
     EMPTY_TITLE: 'Review Email/Password values',
     EMPTY_VALUES: 'Empty values detected',
-    ADD_EMAIL: 'Enter Email',
+    ADD_APPID: 'Enter AppId',
     ADD_EMAIL_BUTTON: 'ADD',
     REVIEW_EMAIL: 'Please review email data',
     ENTER_EMAIL: 'Enter email',
-    REGISTER_FORM: 'Register Form'
+    REGISTER_FORM: 'Register Form',
+    ADD_NAMEAPP: 'Enter NameApp',
+    ADD_USERID: 'Enter UserId',
 
 };
 

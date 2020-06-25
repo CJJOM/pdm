@@ -1,7 +1,7 @@
 import React, { Component } from 'react';
 import { StyleSheet, View, Text, Button, TouchableOpacity } from 'react-native';
 import Constants from './constants';
-import {Colors} from 'react-native/Libraries/NewAppScreen';
+import {Colors} from '../Config/Colors';
 
 
 export default class button extends Component {
@@ -40,14 +40,14 @@ const stylesButton = StyleSheet.create({
       flex: 1,
       top: -95,
       alignItems: 'center',
-      justifyContent: 'flex-start',
+      justifyContent: 'center',
     },
     button: {
       alignItems: 'center',
       justifyContent: 'center',
-      backgroundColor: '#F035E0',
+      backgroundColor: Colors.dark,
       height: Constants.DEFAULT_MARGIN_BUTTON,
-      borderRadius: 20,
+      borderRadius: 50,
       zIndex: 100,
     },
     circle: {
@@ -56,7 +56,7 @@ const stylesButton = StyleSheet.create({
       marginTop: -Constants.DEFAULT_MARGIN_BUTTON,
       borderWidth: 1,
       borderColor: '#F035E0',
-      borderRadius: 100,
+      borderRadius: 50,
       alignSelf: 'center',
       zIndex: 99,
       backgroundColor: '#F035E0',

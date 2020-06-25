@@ -16,6 +16,13 @@
 		2D02E4BD1E0B4A84006451C7 /* Images.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 13B07FB51A68108700A75B9A /* Images.xcassets */; };
 		2D02E4BF1E0B4AB3006451C7 /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = 13B07FB71A68108700A75B9A /* main.m */; };
 		2DCD954D1E0B4F2C00145EB5 /* AwesomeProjectTests.m in Sources */ = {isa = PBXBuildFile; fileRef = 00E356F21AD99517003FC87E /* AwesomeProjectTests.m */; };
+		227554EC86E94695BB04B1C3 /* Hangbird.otf in Resources */ = {isa = PBXBuildFile; fileRef = 0F20F2A0DC0F4178BBE1CBAF /* Hangbird.otf */; };
+		ED40A8858BFF48088409CD4C /* TofinoPersonal-Black.otf in Resources */ = {isa = PBXBuildFile; fileRef = CC78C54DAEC549EE97BE0DDF /* TofinoPersonal-Black.otf */; };
+		BA97152EA9C5453DBB4CE86A /* TofinoPersonal-Bold.otf in Resources */ = {isa = PBXBuildFile; fileRef = 83C0472712F148849BFEC718 /* TofinoPersonal-Bold.otf */; };
+		0D63C56FE5284722BA3383D7 /* TofinoPersonal-Book.otf in Resources */ = {isa = PBXBuildFile; fileRef = 49A8139432DA4CDF956C0314 /* TofinoPersonal-Book.otf */; };
+		1E05C82AFA8E42078C968D6C /* TofinoPersonal-Light.otf in Resources */ = {isa = PBXBuildFile; fileRef = 798A000D4EA44F7BB333DD8F /* TofinoPersonal-Light.otf */; };
+		042040CF4E9D41AC98EB6860 /* TofinoPersonal-LightItalic.otf in Resources */ = {isa = PBXBuildFile; fileRef = 8F9CE90F1D304AD79C3D7D06 /* TofinoPersonal-LightItalic.otf */; };
+		A99767AC56BD415A8EC2E774 /* TofinoPersonal-Regular.otf in Resources */ = {isa = PBXBuildFile; fileRef = 07A0EA0F621B47FE958BA2E4 /* TofinoPersonal-Regular.otf */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -51,6 +58,13 @@
 		2D02E4901E0B4A5D006451C7 /* AwesomeProject-tvOSTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = "AwesomeProject-tvOSTests.xctest"; sourceTree = BUILT_PRODUCTS_DIR; };
 		ED297162215061F000B7C4FE /* JavaScriptCore.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = JavaScriptCore.framework; path = System/Library/Frameworks/JavaScriptCore.framework; sourceTree = SDKROOT; };
 		ED2971642150620600B7C4FE /* JavaScriptCore.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = JavaScriptCore.framework; path = Platforms/AppleTVOS.platform/Developer/SDKs/AppleTVOS12.0.sdk/System/Library/Frameworks/JavaScriptCore.framework; sourceTree = DEVELOPER_DIR; };
+		0F20F2A0DC0F4178BBE1CBAF /* Hangbird.otf */ = {isa = PBXFileReference; name = "Hangbird.otf"; path = "../assets/fonts/Hangbird.otf"; sourceTree = "<group>"; fileEncoding = undefined; lastKnownFileType = unknown; explicitFileType = undefined; includeInIndex = 0; };
+		CC78C54DAEC549EE97BE0DDF /* TofinoPersonal-Black.otf */ = {isa = PBXFileReference; name = "TofinoPersonal-Black.otf"; path = "../assets/fonts/TofinoPersonal-Black.otf"; sourceTree = "<group>"; fileEncoding = undefined; lastKnownFileType = unknown; explicitFileType = undefined; includeInIndex = 0; };
+		83C0472712F148849BFEC718 /* TofinoPersonal-Bold.otf */ = {isa = PBXFileReference; name = "TofinoPersonal-Bold.otf"; path = "../assets/fonts/TofinoPersonal-Bold.otf"; sourceTree = "<group>"; fileEncoding = undefined; lastKnownFileType = unknown; explicitFileType = undefined; includeInIndex = 0; };
+		49A8139432DA4CDF956C0314 /* TofinoPersonal-Book.otf */ = {isa = PBXFileReference; name = "TofinoPersonal-Book.otf"; path = "../assets/fonts/TofinoPersonal-Book.otf"; sourceTree = "<group>"; fileEncoding = undefined; lastKnownFileType = unknown; explicitFileType = undefined; includeInIndex = 0; };
+		798A000D4EA44F7BB333DD8F /* TofinoPersonal-Light.otf */ = {isa = PBXFileReference; name = "TofinoPersonal-Light.otf"; path = "../assets/fonts/TofinoPersonal-Light.otf"; sourceTree = "<group>"; fileEncoding = undefined; lastKnownFileType = unknown; explicitFileType = undefined; includeInIndex = 0; };
+		8F9CE90F1D304AD79C3D7D06 /* TofinoPersonal-LightItalic.otf */ = {isa = PBXFileReference; name = "TofinoPersonal-LightItalic.otf"; path = "../assets/fonts/TofinoPersonal-LightItalic.otf"; sourceTree = "<group>"; fileEncoding = undefined; lastKnownFileType = unknown; explicitFileType = undefined; includeInIndex = 0; };
+		07A0EA0F621B47FE958BA2E4 /* TofinoPersonal-Regular.otf */ = {isa = PBXFileReference; name = "TofinoPersonal-Regular.otf"; path = "../assets/fonts/TofinoPersonal-Regular.otf"; sourceTree = "<group>"; fileEncoding = undefined; lastKnownFileType = unknown; explicitFileType = undefined; includeInIndex = 0; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -140,6 +154,7 @@
 				00E356EF1AD99517003FC87E /* AwesomeProjectTests */,
 				83CBBA001A601CBA00E9B192 /* Products */,
 				2D16E6871FA4F8E400B85C8A /* Frameworks */,
+				2F07475E4B2E4A8C9088CF21 /* Resources */,
 			);
 			indentWidth = 2;
 			sourceTree = "<group>";
@@ -156,6 +171,21 @@
 			);
 			name = Products;
 			sourceTree = "<group>";
+		};
+		2F07475E4B2E4A8C9088CF21 /* Resources */ = {
+			isa = "PBXGroup";
+			children = (
+				0F20F2A0DC0F4178BBE1CBAF /* Hangbird.otf */,
+				CC78C54DAEC549EE97BE0DDF /* TofinoPersonal-Black.otf */,
+				83C0472712F148849BFEC718 /* TofinoPersonal-Bold.otf */,
+				49A8139432DA4CDF956C0314 /* TofinoPersonal-Book.otf */,
+				798A000D4EA44F7BB333DD8F /* TofinoPersonal-Light.otf */,
+				8F9CE90F1D304AD79C3D7D06 /* TofinoPersonal-LightItalic.otf */,
+				07A0EA0F621B47FE958BA2E4 /* TofinoPersonal-Regular.otf */,
+			);
+			name = Resources;
+			sourceTree = "<group>";
+			path = "";
 		};
 /* End PBXGroup section */
 
@@ -240,7 +270,7 @@
 		83CBB9F71A601CBA00E9B192 /* Project object */ = {
 			isa = PBXProject;
 			attributes = {
-				LastUpgradeCheck = 0940;
+				LastUpgradeCheck = 940;
 				ORGANIZATIONNAME = Facebook;
 				TargetAttributes = {
 					00E356ED1AD99517003FC87E = {
@@ -293,6 +323,13 @@
 			files = (
 				13B07FBF1A68108700A75B9A /* Images.xcassets in Resources */,
 				13B07FBD1A68108700A75B9A /* LaunchScreen.xib in Resources */,
+				227554EC86E94695BB04B1C3 /* Hangbird.otf in Resources */,
+				ED40A8858BFF48088409CD4C /* TofinoPersonal-Black.otf in Resources */,
+				BA97152EA9C5453DBB4CE86A /* TofinoPersonal-Bold.otf in Resources */,
+				0D63C56FE5284722BA3383D7 /* TofinoPersonal-Book.otf in Resources */,
+				1E05C82AFA8E42078C968D6C /* TofinoPersonal-Light.otf in Resources */,
+				042040CF4E9D41AC98EB6860 /* TofinoPersonal-LightItalic.otf in Resources */,
+				A99767AC56BD415A8EC2E774 /* TofinoPersonal-Regular.otf in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

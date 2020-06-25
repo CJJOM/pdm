@@ -13,6 +13,7 @@ import 'firebase/storage';
 } from 'react-native-dotenv';*/
 
 const firebaseConfig = {
+
     apiKey: "AIzaSyCyxTdp_6Hmt9IXwDh_hUmtzjSpWEXb5fw",
     authDomain: "guideturism2.firebaseapp.com",
     databaseURL: "https://guideturism2.firebaseio.com",

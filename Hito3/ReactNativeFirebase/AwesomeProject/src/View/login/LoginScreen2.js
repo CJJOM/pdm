@@ -1,9 +1,15 @@
-import React, { useState } from 'react';
-import { StyleSheet, View, SafeAreaView, KeyboardAvoidingView, Alert } from 'react-native';
+import React, {useState} from 'react';
+import {
+  StyleSheet,
+  View,
+  SafeAreaView,
+  KeyboardAvoidingView,
+  Alert,
+  ImageBackground
+} from 'react-native';
 
 import ButtonLogin from '../../Components/login/Button';
 import TextInputLogin from '../../Components/TextInput';
-import LogoLogin from '../../Components/login/Logo';
 import EmailTextField from '../../Components/login/EmailTextField';
 import DismissKeyboard from '../../Components/login/DismissKeyboard';
 import FirebasePlugin from '../../plugins/firebase/Firebase';
@@ -13,7 +19,7 @@ import Images from '../../Config/Images';
 import Constants from '../../Config/Constants';
 import Colors from '../../Config/Colors';
 
-const LoginScreen = ({navigation}) => {
+const LoginScreen = ({route}) => {
   const [email, setEmail] = useState('');
   const [errorEmail, setErrorEmail] = useState('');
   const [password, setPassword] = useState('');
@@ -21,15 +27,19 @@ const LoginScreen = ({navigation}) => {
 
   const _validateEmailAddress = () => {
     let isValidEmail = Utils.isValidEmail(email);
-    isValidEmail ? setErrorEmail('') : setErrorEmail(Constants.STRING.EMAIL_ERROR);
+    isValidEmail
+      ? setErrorEmail('')
+      : setErrorEmail(Constants.STRING.EMAIL_ERROR);
     return isValidEmail;
-  }
+  };
 
   const _validatePassword = () => {
     let isValidPassword = Utils.isValidField(password);
-    isValidPassword ? setErrorPassword('') : setErrorPassword(Constants.STRING.USERNAME_ERROR);
+    isValidPassword
+      ? setErrorPassword('')
+      : setErrorPassword(Constants.STRING.USERNAME_ERROR);
     return isValidPassword;
-  }
+  };
 
   const _onPressLogin = () => {
     //console.log('press button!!!');
@@ -41,76 +51,95 @@ const LoginScreen = ({navigation}) => {
     } else {
       Alert.alert('valores no aceptados!!');
     }
-  }
+  };
 
   const _onPressRegister = () => {
     navigation.navigate('Register');
-  }
+  };
 
   const LoginApp = (email, password) => {
     try {
-      FirebasePlugin.auth().signInWithEmailAndPassword(email, password)
+      FirebasePlugin.auth()
+        .signInWithEmailAndPassword(email, password)
         .then((user) => {
-          navigation.navigate('App');
-          Alert.alert('Usuario logeado');
+          //setIsLoading(false);
+          route.params.route.params.setIsLogged(true);
+          // navigation.navigate('App');
+          
         })
         .catch((error) => {
+          //setIsLoading(false);
           Alert.alert('Invalid value', error.message);
         });
     } catch (error) {
+ //setIsLoading(true);
       Alert.alert(error.message);
     }
-  }
+  };
 
   return (
-    <DismissKeyboard>
-      <KeyboardAvoidingView style={stylesLoginScreen.container} behavior="height" enabled>
+    <ImageBackground
+    style={stylesLoginScreen.backgroundImage}
+    source={Images.BACKG}
+    >
+      <DismissKeyboard>
+      <KeyboardAvoidingView
+        style={stylesLoginScreen.container}
+        behavior="height"
+        enabled>
         <View style={stylesLoginScreen.container}>
           <SafeAreaView>
-            <LogoLogin style={stylesLoginScreen.logo} />
             <View style={stylesLoginScreen.form}>
               <EmailTextField
-                onChangeText={(email) => { setEmail(email) }}
+                onChangeText={(email) => {
+                  setEmail(email);
+                }}
                 onEndEditing={_validateEmailAddress}
                 source={Images.EMAIL}
                 error={errorEmail}
                 placeholder={Constants.STRING.EMAIL}
                 secureTextEntry={false}
-                autoCorrect={false}>
-              </EmailTextField>
+                autoCorrect={false}></EmailTextField>
               <TextInputLogin
-                onChangeText={(password) => { setPassword(password) }}
+                onChangeText={(password) => {
+                  setPassword(password);
+                }}
                 onEndEditing={_validatePassword}
                 source={Images.PASSWORD}
                 error={errorPassword}
                 placeholder={Constants.STRING.PASSWORD}
                 secureTextEntry={true}
-                autoCorrect={false}>
-              </TextInputLogin>
+                autoCorrect={false}></TextInputLogin>
               <ButtonLogin
                 onPress={_onPressLogin}
-                titleButton={Constants.STRING.TITLE_BUTTON}>
-              </ButtonLogin>
-              <ButtonLogin
+                titleButton={Constants.STRING.TITLE_BUTTON}></ButtonLogin>
+              <ButtonLogin 
+                style={stylesLoginScreen.botones}
                 onPress={_onPressRegister}
-                titleButton={Constants.STRING.REGISTER_FORM}>
-              </ButtonLogin>
+                titleButton={Constants.STRING.REGISTER_FORM}></ButtonLogin>
             </View>
           </SafeAreaView>
         </View>
       </KeyboardAvoidingView>
     </DismissKeyboard>
+    </ImageBackground>
+    
   );
-}
+};
 
 const stylesLoginScreen = StyleSheet.create({
   container: {
     flex: 1,
-    backgroundColor: Colors.dark,
     alignItems: 'center',
+    justifyContent: 'center'
   },
-  logo: { width: '100%', resizeMode: 'contain', alignSelf: 'center' },
-  form: { justifyContent: 'center', width: '80%' },
+  logo: {width: '100%', resizeMode: 'contain', alignSelf: 'center'},
+  form: {justifyContent: 'center', width: '80%'},
+  backgroundImage: {
+    height: '100%',
+    resizeMode: 'stretch'
+  },
+  
 });
 
 export default LoginScreen;

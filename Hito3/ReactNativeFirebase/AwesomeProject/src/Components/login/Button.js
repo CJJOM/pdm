@@ -31,14 +31,12 @@ export default class button extends Component {
 
 const stylesButton = StyleSheet.create({
     container: {
-        width: 100,
+        width: 320,
         justifyContent: 'center',
-        alignItems: 'center',
-        alignContent: 'center',
-        backgroundColor: Colors.appPrimary,
+        backgroundColor: 'transparent',
         marginBottom: 12,
         paddingVertical: 12,
-        borderRadius: 5,
+        borderRadius: 50,
         borderWidth: StyleSheet.hairlineWidth,
         borderColor: 'rgba(255,255,255,0.7)'
     },
