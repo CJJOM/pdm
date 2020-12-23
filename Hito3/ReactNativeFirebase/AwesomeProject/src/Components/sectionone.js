@@ -2,6 +2,7 @@ import React from 'react';
 import { StyleSheet, Image, TouchableOpacity, View, Text} from 'react-native';
 import Colors from '../Config/Colors';
 import Images from '../Config/Images';
+import Constants from '../Config/Constants';
 
 const Sectionone = () =>{
     return(
@@ -10,7 +11,7 @@ const Sectionone = () =>{
                 style={styles.traza}
                 source={Images.TRAZADO}
             ></Image>
-            <Text style={styles.parrafo}>La llajta,{"\n"}la tierra{"\n"} que nutre</Text>
+            <Text style={styles.parrafo}>{Constants.STRING.TITUTRA}</Text>
         </View>
     )
     

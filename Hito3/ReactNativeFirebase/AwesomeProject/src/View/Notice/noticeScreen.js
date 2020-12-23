@@ -5,9 +5,13 @@ import ButtonIcon from '../../Components/ButtonIcon';
 import Images from '../../Config/Images';
 import FirebasePlugin from '../../plugins/firebase/Firebase';
 import CardN from '../../Components/cardN';
+import Carousel from '../../Components/Carousel';
+import {dummyData} from '../../Components/data/Data';
+import Constants from '../../Config/Constants';
+import {dummyData2} from '../../Components/data/Data2';
 
 const NoticeScreen = ({navigation}) => {
-  const onPressSetting = () => {
+  /*const onPressSetting = () => {
     navigation.navigate('Setting');
   };
 
@@ -43,17 +47,17 @@ const NoticeScreen = ({navigation}) => {
           onPressButton={onPressLogout}></ButtonIcon>
       ),
     });
-  });
+  });*/
 
   return (
     <ImageBackground style={styles.backgroundImage} source={Images.BACKG2}>
-      <Text style={styles.text}>Cochabamba</Text>
-      <Text style={styles.text2}>TIERRA QUE NUTRE</Text>
+      <Text style={styles.text}>{Constants.STRING.MAINTITLE}</Text>
+      <Text style={styles.text2}>{Constants.STRING.MAINTITLE2}</Text>
       <View>
         <Text style={styles.text3}>Noticias</Text>
       </View>
       <View>
-        <CardN></CardN>
+        <Carousel data={dummyData2}></Carousel>
       </View>
     </ImageBackground>
   );
@@ -91,6 +95,7 @@ const styles = StyleSheet.create({
     fontSize: 30,
     paddingLeft: 50,
     paddingTop: 20,
+    paddingBottom: 50
   },
 });
 

@@ -14,13 +14,13 @@ import 'firebase/storage';
 
 const firebaseConfig = {
 
-    apiKey: "AIzaSyCyxTdp_6Hmt9IXwDh_hUmtzjSpWEXb5fw",
-    authDomain: "guideturism2.firebaseapp.com",
-    databaseURL: "https://guideturism2.firebaseio.com",
-    projectId: "guideturism2",
-    storageBucket: "guideturism2.appspot.com",
-    messagingSenderId: "246789205911",
-    appId: "1:246789205911:web:3c05f07f35ad4ef3569ed2"
+    apiKey: "AIzaSyDNTvzL89Kn4OQbhm1I9JFzPzdNrix2g5U",
+    authDomain: "guideturismcbba.firebaseapp.com",
+    databaseURL: "https://guideturismcbba.firebaseio.com",
+    projectId: "guideturismcbba",
+    storageBucket: "guideturismcbba.appspot.com",
+    messagingSenderId: "44310539389",
+    appId: "1:44310539389:web:df43660e01b3a022a89514"
 };
 
 firebase.initializeApp(firebaseConfig);

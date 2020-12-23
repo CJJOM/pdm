@@ -7,6 +7,7 @@ import {
   Alert,
   ImageBackground
 } from 'react-native';
+import Container from './Container';
 
 import ButtonLogin from '../../Components/login/Button';
 import TextInputLogin from '../../Components/TextInput';
@@ -19,7 +20,7 @@ import Images from '../../Config/Images';
 import Constants from '../../Config/Constants';
 import Colors from '../../Config/Colors';
 
-const LoginScreen = ({route}) => {
+const LoginScreen = ({route, navigation}) => {
   const [email, setEmail] = useState('');
   const [errorEmail, setErrorEmail] = useState('');
   const [password, setPassword] = useState('');
@@ -78,10 +79,7 @@ const LoginScreen = ({route}) => {
   };
 
   return (
-    <ImageBackground
-    style={stylesLoginScreen.backgroundImage}
-    source={Images.BACKG}
-    >
+    <Container>
       <DismissKeyboard>
       <KeyboardAvoidingView
         style={stylesLoginScreen.container}
@@ -122,7 +120,8 @@ const LoginScreen = ({route}) => {
         </View>
       </KeyboardAvoidingView>
     </DismissKeyboard>
-    </ImageBackground>
+    </Container>
+
     
   );
 };
